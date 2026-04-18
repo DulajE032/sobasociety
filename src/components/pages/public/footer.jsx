@@ -1,5 +1,6 @@
 import './footer.css';
 import React from "react";
+import { Mail,  UserCog } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -23,17 +24,32 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Contact Us</h3>
           <p>Email: contact@awagreen.org</p>
-          <p>Phone: +1 (234) 567-890</p>
-          <div className="social-links">
-            {/* Social Icons Placeholder */}
-            <span className="social-icon">FB</span>
-            <span className="social-icon">TW</span>
-            <span className="social-icon">IG</span>
+          <p>Phone:+94701688327</p>
+
+        </div>
+        <div className="footer-section tech-support-section">
+          <h3>Technical Support</h3>
+          <div className="web-master-card">
+            <div className="web-master-pic">
+              <UserCog size={28} color="#4CAF50" />
+            </div>
+            <div className="web-master-info">
+              <h4>Web Master</h4>
+              <p>Technical Officer</p>
+              <p>K DULAJ ASHEN</p>
+              <p>FAculty of enginnering university of peradeniya</p>
+              <div className="tech-links">
+                <a href="mailto:dulajashennew2002@gmail.com" aria-label="Email Technical Support">
+                  <Mail size={18} />
+                </a>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2026 Awa Green Society. All Rights Reserved.</p>
+        <p>&copy; 2026 Soba Green Society. All Rights Reserved.</p>
       </div>
     </footer>
   );

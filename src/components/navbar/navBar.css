@@ -10,7 +10,7 @@ NAV CONTAINER (CENTERED FIXED)
   max-width: 1200px;
   z-index: 1000;
   transition: all 0.3s ease;
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 /* ===============================

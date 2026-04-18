@@ -49,7 +49,6 @@ const Navbar = () => {
           <Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link>
           <Link to="/#projects" onClick={() => setIsMenuOpen(false)}>Projects</Link>
           <Link to="/#gallery" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
-          <Link to="/#contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           <Link to="/form" className="btn-primary" style={{color:'white', textDecoration:'none', padding:'8px 20px'}} onClick={() => setIsMenuOpen(false)}>Join Us</Link>
         </div>
       </div>
