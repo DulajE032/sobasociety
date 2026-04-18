@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
         <div className="footer-section">
           <h3>Contact Us</h3>
-          <p>Email: contact@awagreen.org</p>
+          <p>Email: info.sobasociety.uop@gmail.com</p>
           <p>Phone:+94701688327</p>
 
         </div>
@@ -38,6 +38,7 @@ const Footer = () => {
               <p>Technical Officer</p>
               <p>K DULAJ ASHEN</p>
               <p>FAculty of enginnering university of peradeniya</p>
+              <p>Phone:+94774126871</p>
               <div className="tech-links">
                 <a href="mailto:dulajashennew2002@gmail.com" aria-label="Email Technical Support">
                   <Mail size={18} />
