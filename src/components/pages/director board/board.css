@@ -1,0 +1,126 @@
+/* ===== Container ===== */
+.board-container {
+  padding: 80px 10%;
+  text-align: center;
+  background: linear-gradient(180deg, #E6F3FA 0%, #F5F9FC 100%);
+  font-family: inherit;
+}
+.board-heading {
+  display: none; /* Hide main heading to match image, or keep visual structure */
+}
+/* ===== Sections ===== */
+.board-section {
+  margin-bottom: 70px;
+}
+.board-subheading {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+/* ===== Grid ===== */
+.board-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px; 
+  margin: 0 auto;
+}
+/* ===== Clean Card (No Box/Glass) ===== */
+.board-member-clean {
+  width: calc(25% - 30px);
+  min-width: 160px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  background: transparent; /* No card box */
+}
+/* Hover effect */
+.board-member-clean:hover {
+  transform: translateY(-8px);
+}
+.board-member-clean:hover .member-photo-placeholder {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+/* ===== Floating organic effect ===== */
+/* Slight up/down wave effect natural organic feel */
+.board-member-clean:nth-child(odd) {
+  transform: translateY(4px);
+}
+.board-member-clean:nth-child(even) {
+  transform: translateY(-4px);
+}
+/* ===== Profile Image ===== */
+.member-photo-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #cecece; /* Soft gray placeholder to match image styles */
+  color: #555;
+  font-weight: 500;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Clean dark shadow on circle only */
+  transition: all 0.3s ease;
+}
+/* ===== Text ===== */
+.member-name {
+  color: #111;
+  font-size: 1rem; 
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.member-role {
+  color: #444; /* Clean grey role */
+  font-size: 0.85rem; 
+  font-weight: 500;
+  margin: 0 0 15px 0;
+}
+.member-contact {
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 2px 0;
+  line-height: 1.4;
+}
+/* ===== Tablet ===== */
+@media (max-width: 900px) {
+  .board-grid {
+    gap: 30px;
+  }
+  .board-member-clean {
+    width: calc(33.33% - 20px); /* 3 clean blocks on tablets */
+  }
+}
+/* ===== Mobile ===== */
+@media (max-width: 550px) {
+  .board-container {
+    padding: 60px 5%;
+  }
+  .board-grid {
+    gap: 20px;
+  }
+  .board-member-clean {
+    width: calc(50% - 10px); /* Exactly 2 balanced clean profiles per row */
+  }
+  .member-photo-placeholder {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 15px;
+  }
+  /* Less intense float on mobile */
+  .board-member-clean:nth-child(odd) {
+    transform: translateY(2px);
+  }
+  .board-member-clean:nth-child(even) {
+    transform: translateY(-2px);
+  }
+}
