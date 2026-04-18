@@ -50,9 +50,10 @@ const Feedback = () => {
             <video
               className="feedback-video"
               controls
+              playsInline
               preload="metadata"
             >
-              <source src={clip1} type="video/webm" />
+              <source src={clip1} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
