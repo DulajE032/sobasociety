@@ -1,56 +1,38 @@
-import './footer.css';
-import React from "react";
-import { Mail,  UserCog } from 'lucide-react';
+import { Mail, Phone, Leaf } from "lucide-react";
+import './footer.css'
 
 const Footer = () => {
   return (
-    <footer className="footer-container">
-      <div className="footer-grid">
+    <footer className="glass-footer">
+      <div className="footer-container">
+
+        {/* Brand */}
         <div className="footer-section">
-          <div className='bungee-regular' style={{fontSize:'25px'}}>
-            සොබා
-              </div>
-          <p>Protecting the environment for a sustainable future. Join us in making a difference.</p>
+          <h3 className="logo">
+            <Leaf size={20} /> Soba Society
+          </h3>
+          <p>Protecting nature for future generations 🌿</p>
         </div>
+
+        {/* Links */}
         <div className="footer-section">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="/soba/public">Home</a></li>
-            <li><a href="/pages/events">Events</a></li>
-            <li><a href="/pages/board">Board</a></li>
-            <li><a href="/pages/about">About Us</a></li>
-          </ul>
-        </div>
-        <div className="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: info.sobasociety.uop@gmail.com</p>
-          <p>Phone:+94701688327</p>
+          <h4>Quick Links</h4>
+          <a href="/">Home</a>
 
         </div>
-        <div className="footer-section tech-support-section">
-          <h3>Technical Support</h3>
-          <div className="web-master-card">
-            <div className="web-master-pic">
-              <UserCog size={28} color="#4CAF50" />
-            </div>
-            <div className="web-master-info">
-              <h4>Web Master</h4>
-              <p>Technical Officer</p>
-              <p>K DULAJ ASHEN</p>
-              <p>FAculty of enginnering university of peradeniya</p>
-              <p>Phone:+94774126871</p>
-              <div className="tech-links">
-                <a href="mailto:dulajashennew2002@gmail.com" aria-label="Email Technical Support">
-                  <Mail size={18} />
-                </a>
 
-              </div>
-            </div>
-          </div>
+        {/* Tech Support */}
+        <div className="footer-section">
+          <h4>Tech Support</h4>
+          <p>Dulaj Ashen</p>
+          <p><Phone size={14}/> +94 77 412 6871</p>
+          <p><Mail size={14}/> dulajashennew2002@gmail.com</p>
         </div>
+
       </div>
+
       <div className="footer-bottom">
-        <p>&copy; 2026 Soba Green Society. All Rights Reserved.</p>
+        © 2026 Soba Society. All rights reserved.
       </div>
     </footer>
   );

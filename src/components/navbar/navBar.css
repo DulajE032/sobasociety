@@ -32,19 +32,31 @@ GLASS PANEL (MAIN NAV BOX)
 }
 
 /* ===============================
-NAV LINKS (DEFAULT = MOBILE)
+NAV LINKS (DEFAULT = MOBILE/SIDEBAR)
 ================================ */
 .nav-links {
-display: none; /* hidden by default (mobile) */
-flex-direction: column;
-width: 100%;
-gap: 1rem;
-margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: -280px; /* Hidden completely off-screen by default */
+  width: 250px;
+  height: 100vh;
+  background: rgba(20, 20, 35, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 80px 30px 30px;
+  gap: 2rem;
+  transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+  margin-top: 0;
+  z-index: 999;
 }
 
-/* SHOW MENU WHEN ACTIVE */
+/* SHOW MENU WHEN ACTIVE (SLIDE IN) */
 .mobile-nav-dropdown {
-display: flex;
+  left: 0; /* Slides into view smoothly */
 }
 
 /* NAV LINK STYLE */
@@ -108,11 +120,32 @@ transform: translateY(-2px);
 MOBILE MENU BUTTON
 ================================ */
 .mobile-menu-btn {
-display: block;
-background: none;
-border: none;
-cursor: pointer;
-color: var(--text-color, #ffffff);
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color, #ffffff);
+  z-index: 1001; /* Keep above sidebar */
+}
+
+/* Overlay background for sidebar */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* ===============================
@@ -121,21 +154,30 @@ DESKTOP VIEW (>=768px)
 @media (min-width: 768px) {
 
 .nav-glass-panel {
-flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 
 .nav-links {
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: flex-end;
-gap: 1.5rem;
-width: auto;
-margin-top: 0;
+  position: static;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: auto;
+  background: none;
+  backdrop-filter: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  gap: 1.5rem;
+  margin-top: 0;
+}
+
+.menu-overlay {
+  display: none !important;
 }
 
 .mobile-menu-btn {
-display: none;
+  display: none;
 }
 }
 

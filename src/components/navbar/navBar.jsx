@@ -30,29 +30,36 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="nav-container">
-      <div className="glass-panel nav-glass-panel">
-        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
-          <a href="/soba/public" onClick={handleLogoClick} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.25rem', fontWeight: 'bold', color: 'inherit', textDecoration: 'none' }}>
-            <img src={logo3} alt="Natural Society Logo" style={{ height: '40px' }} />
-            <div className='bungee-regular' style={{fontSize:'25px'}}>
-            සොබා
-              </div>
-          </a>
-          <button className="mobile-menu-btn" onClick={toggleMenu}>
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
+    <>
+      <div 
+        className={`menu-overlay ${isMenuOpen ? 'active' : ''}`} 
+        onClick={() => setIsMenuOpen(false)}
+      ></div>
+      
+      <nav className="nav-container">
+        <div className="glass-panel nav-glass-panel">
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
+            <a href="/soba/public" onClick={handleLogoClick} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.25rem', fontWeight: 'bold', color: 'inherit', textDecoration: 'none' }}>
+              <img src={logo3} alt="Natural Society Logo" style={{ height: '40px' }} />
+              <div className='bungee-regular' style={{fontSize:'25px'}}>
+              සොබා
+                </div>
+            </a>
+            <button className="mobile-menu-btn" onClick={toggleMenu}>
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
 
-        <div className={`nav-links ${isMenuOpen ? 'mobile-nav-dropdown' : ''}`}>
-          <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
-          <Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link>
-          <Link to="/#projects" onClick={() => setIsMenuOpen(false)}>Projects</Link>
-          <Link to="/#gallery" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
-          <Link to="/form" className="btn-primary" style={{color:'white', textDecoration:'none', padding:'8px 20px'}} onClick={() => setIsMenuOpen(false)}>Join Us</Link>
+          <div className={`nav-links ${isMenuOpen ? 'mobile-nav-dropdown' : ''}`}>
+            <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link>
+            <Link to="/#projects" onClick={() => setIsMenuOpen(false)}>Projects</Link>
+            <Link to="/#gallery" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+            <Link to="/form" className="btn-primary" style={{color:'white', textDecoration:'none', padding:'8px 20px'}} onClick={() => setIsMenuOpen(false)}>Join Us</Link>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 
