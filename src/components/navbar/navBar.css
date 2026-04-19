@@ -38,10 +38,11 @@ NAV LINKS (DEFAULT = MOBILE/SIDEBAR)
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 0;
+  top: 10px;
   left: -280px; /* Hidden completely off-screen by default */
   width: 250px;
-  height: 100vh;
+  height: 55vh;
+  border-radius:25px;
   background: rgba(20, 20, 35, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -62,8 +63,10 @@ NAV LINKS (DEFAULT = MOBILE/SIDEBAR)
 /* NAV LINK STYLE */
 .nav-links a {
 text-decoration: none;
-color: var(--text-color, #ffffff); /* Added fallback white */
+color: #ffffff;
 font-size: 0.95rem;
+font-weight: 500;
+text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 display: inline-flex;
 align-items: center;
 justify-content: center;

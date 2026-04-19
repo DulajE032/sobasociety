@@ -29,6 +29,23 @@ const Navbar = () => {
     }, 100);
   };
 
+  const handleScrollLink = (e, sectionId) => {
+    // Prevent default react-router behavior
+    e.preventDefault();
+    setIsMenuOpen(false);
+    
+    // First route back to home page
+    navigate('/');
+    
+    // Wait a tiny bit for the page to render, then scroll to the element
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return (
     <>
       <div 
@@ -53,8 +70,8 @@ const Navbar = () => {
           <div className={`nav-links ${isMenuOpen ? 'mobile-nav-dropdown' : ''}`}>
             <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link>
-            <Link to="/#projects" onClick={() => setIsMenuOpen(false)}>Projects</Link>
-            <Link to="/#gallery" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+            <a href="/#projects" onClick={(e) => handleScrollLink(e, 'projects')}>Projects</a>
+            <a href="/#gallery" onClick={(e) => handleScrollLink(e, 'gallery')}>Gallery</a>
             <Link to="/form" className="btn-primary" style={{color:'white', textDecoration:'none', padding:'8px 20px'}} onClick={() => setIsMenuOpen(false)}>Join Us</Link>
           </div>
         </div>
