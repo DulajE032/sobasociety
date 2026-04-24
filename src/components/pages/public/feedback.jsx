@@ -1,6 +1,27 @@
 import './feedback.css';
 import clip1 from '../../../assets/videoclips/clip1.mp4';
 
+const dummyFeedbacks = [
+  {
+    id: 1,
+    name: "Sarah Jenkins",
+    role: "Volunteer",
+    message: "The recent river cleanup was incredibly well-organized. It felt great to make a tangible difference in our community!"
+  },
+  {
+    id: 2,
+    name: "Mark T.",
+    role: "Nature Enthusiast",
+    message: "I learned so much during the wildlife observation event. The team is very knowledgeable and passionate."
+  },
+  {
+    id: 3,
+    name: "Elena Rodriguez",
+    role: "Community Member",
+    message: "A fantastic initiative! Planting those trees made me feel connected to nature again. Highly recommend joining."
+  }
+];
+
 const Feedback = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +66,6 @@ const Feedback = () => {
 
         <div className="feedback-video-container">
           <h3 className="video-title">Recently Happened Events</h3>
-          {/* Add your video file path to the src below to replace placeholder */}
           <div className="video-wrapper">
             <video
               className="feedback-video"
@@ -57,7 +77,25 @@ const Feedback = () => {
               Your browser does not support the video tag.
             </video>
           </div>
-          <p className="video-caption">Past Evenets of soba society!</p>
+          <p className="video-caption">Past Events of soba society!</p>
+        </div>
+      </div>
+
+      <div className="feedback-cards-section">
+        <h3 className="feedback-cards-title">What People Are Saying</h3>
+        <div className="feedback-cards-grid">
+          {dummyFeedbacks.map((fb) => (
+            <div key={fb.id} className="glass-card">
+              <div className="glass-card-header">
+                <div className="avatar">{fb.name.charAt(0)}</div>
+                <div>
+                  <h4 className="user-name">{fb.name}</h4>
+                  <p className="user-role">{fb.role}</p>
+                </div>
+              </div>
+              <p className="glass-card-message">"{fb.message}"</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
