@@ -20,7 +20,7 @@ const Events = () => {
   return (
     <section id="events" className="events-section">
       <div className="events-header">
-        <h2 className="events-title">Upcoming Events</h2>
+        <h2 className="events-title">Past Events</h2>
         <p className="events-subtitle">
           We organise a wide range of events open to members and public every month, from educational talks to birdwatching and rewilding activities. Check out our events and join us today!
         </p>
@@ -49,7 +49,7 @@ const Events = () => {
                 <a href="#" className="find-out-more">Find out more</a>
               </div>
               <div className="event-image-box">
-                <img src={event.img} alt={event.title} />
+                <img className="project-image" src={event.img} alt={event.title} />
               </div>
             </div>
           ))}

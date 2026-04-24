@@ -12,6 +12,7 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
 import './App.css'
+import LoginForm from "./admin/LoginForm.jsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/form" element={<MembershipForm />} />
         <Route path="/about" element={<AboutUs />} />
+          <Route path="/admin" element={<LoginForm />} />
       </Routes>
    </>
   )

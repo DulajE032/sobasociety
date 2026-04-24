@@ -1,0 +1,114 @@
+/* ===== Container & Layout ===== */
+.board-container {
+  padding: 60px 5%;
+  background-color: #fcfcfc;
+  min-height: 100vh;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Space between cards */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Card Styling ===== */
+.card {
+  width: 280px; /* Fixed width for consistency */
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px); /* Blurs background behind card */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.featured-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect: Lift and Shadow */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  border-color: #f87171; /* Light red border on hover */
+}
+
+/* ===== Image Handling ===== */
+.card-image-placeholder {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.card-image {
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%; /* perfect circle */
+
+  object-fit: cover;
+
+  border: 3px solid rgba(255, 255, 255, 0.6);
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+
+  background: #f0f0f0;
+
+  transition: transform 0.3s ease;
+}
+
+/* ===== Text & Typography ===== */
+.card-description h1 {
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  margin: 10px 0 5px 0;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+/* Styling for a role/subtitle if you add one later */
+.card-description p {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* ===== Responsive Design ===== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .card-container {
+    gap: 20px;
+  }
+  .card {
+    width: 45%; /* Show 2 cards per row */
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+  .board-container {
+    padding: 40px 20px;
+  }
+  .card {
+    width: 100%; /* Full width on small screens */
+    max-width: 320px;
+  }
+}
